@@ -34,7 +34,7 @@ const HomePage = () => {
       </section>
 
       <footer className="home-footer">
-        <p>&copy; {new Date().getFullYear()} CodeClassroom. Built with ❤️ for educators and coders.</p>
+        <p>&copy; {new Date().getFullYear()} CodeClassroom. Built with ❤️ for educators and coders!</p>
       </footer>
     </div>
   );
