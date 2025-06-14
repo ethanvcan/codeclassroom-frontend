@@ -16,6 +16,12 @@
   text-align: center;
 }
 
+.login-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and title */
+  margin-bottom: 20px;
+}
 
 .login-form {
   display: flex;
