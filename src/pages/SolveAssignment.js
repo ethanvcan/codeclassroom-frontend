@@ -113,7 +113,10 @@ const SolveAssignment = () => {
 
         <div className="button-group">
           <button onClick={handleRun} className="blue-button">Run Code</button>
-          {isCorrect && <button onClick={handleSubmit} className="submit-button">Submit</button>}
+          {isCorrect && !showSuccessModal && (
+            <button onClick={handleSubmit} className="submit-button">Submit</button>
+          )}
+
         </div>
 
         <h4>Output:</h4>
