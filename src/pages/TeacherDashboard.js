@@ -62,7 +62,7 @@ const TeacherDashboard = () => {
     <div className="teacher-dashboard-container">
       <div className="dashboard-header">
         <img src="/logo.png" alt="Logo" className="dashboard-logo" style={{ cursor: 'default' }}/>
-        <h1 className="dashboard-title" style={{ cursor: 'default' }}>CodeClassroom</h1>
+        <h1 className="dashboard-title" style={{ cursor: 'default' }}>CodingCampus</h1>
         <button className="logout-button" onClick={handleLogout}>Logout</button>
 
       </div>

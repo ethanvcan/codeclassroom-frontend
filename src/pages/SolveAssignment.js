@@ -78,7 +78,7 @@ const SolveAssignment = () => {
     <div className="solve-container">
       <div className="dashboard-header">
         <img src="/logo.png" alt="Logo" className="dashboard-logo" style={{ cursor: 'default' }} />
-        <h1 className="dashboard-title" style={{ cursor: 'default' }}>CodeClassroom</h1>
+        <h1 className="dashboard-title" style={{ cursor: 'default' }}>CodingCampus</h1>
       </div>
       <div className="back-button-container">
         <button className="back-button" onClick={() => navigate('/student-dashboard')}>

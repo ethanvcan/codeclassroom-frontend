@@ -32,7 +32,7 @@ const Signup = () => {
     <div className="login-container">
       <ToastContainer />
       <img src="/logo.png" alt="Site Logo" className="login-logo" />
-      <h1 className="login-title">CodeClassroom</h1>
+      <h1 className="login-title">CodingCampus</h1>
 
       <div className="login-card">
         <h2 className="login-title-card">Create Account</h2>
