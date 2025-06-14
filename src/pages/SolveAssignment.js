@@ -19,6 +19,8 @@ const SolveAssignment = () => {
   const [isCorrect, setIsCorrect] = useState(false);
   const [assignment, setAssignment] = useState(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
 
   useEffect(() => {
     const fetchAssignment = async () => {
@@ -64,11 +66,13 @@ const SolveAssignment = () => {
       });
 
       setShowSuccessModal(true);
+      setHasSubmitted(true); // 👈 add this
     } catch (err) {
       console.error('Failed to submit:', err);
       alert('Failed to submit code');
     }
   };
+
 
   return (
     <div className="solve-container">
@@ -113,9 +117,10 @@ const SolveAssignment = () => {
 
         <div className="button-group">
           <button onClick={handleRun} className="blue-button">Run Code</button>
-          {isCorrect && !showSuccessModal && (
+          {isCorrect && !hasSubmitted && (
             <button onClick={handleSubmit} className="submit-button">Submit</button>
           )}
+
 
         </div>
 
