@@ -29,7 +29,7 @@ const HomePage = () => {
         </div>
         <div className="feature-card fade-in delay-2">
           <h3>🧠 Real-Time Feedback</h3>
-          <p>Our integrated Python runner gives instant output validation and feedback.</p>
+          <p>Our integrated Python compiler gives instant output validation and feedback.</p>
         </div>
       </section>
 
