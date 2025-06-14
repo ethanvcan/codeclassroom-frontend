@@ -42,6 +42,32 @@ const HomePage = () => {
         </div>
       </section>
 
+      <section className="instructions-section">
+        <h2>How It Works</h2>
+        <div className="instructions-grid">
+          <div className="instruction-card">
+            <h3>For Students 👨‍🎓</h3>
+            <ul>
+              <li>Join a class using a classroom code from your teacher.</li>
+              <li>View a list of assignments within the class.</li>
+              <li>Write your solution using the built-in code editor.</li>
+              <li>Run your code to check the output.</li>
+              <li>Submit only when your code passes the expected output.</li>
+            </ul>
+          </div>
+          <div className="instruction-card">
+            <h3>For Teachers 👩‍🏫</h3>
+            <ul>
+              <li>Create multiple classrooms for different courses.</li>
+              <li>Add assignments to each classroom.</li>
+              <li>View each student’s code submissions by assignment.</li>
+              <li>Remove students or delete assignments as needed.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
       <section className="footer-section">
         <p>&copy; {new Date().getFullYear()} CodeClassroom. Built for students and teachers.</p>
       </section>
