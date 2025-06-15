@@ -5,7 +5,6 @@ import './StudentDashboard.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const StudentDashboard = () => {
   const username = localStorage.getItem('username');
   const studentId = localStorage.getItem('userId');
@@ -16,17 +15,16 @@ const StudentDashboard = () => {
   const [joinCode, setJoinCode] = useState('');
   const [submissionStatus, setSubmissionStatus] = useState({});
 
-
   useEffect(() => {
     if (assignments.length > 0 && studentId) {
       assignments.forEach(async (assignment) => {
         try {
           const res = await axios.get(`https://codeclassroom-backend.onrender.com/submissions/status/${studentId}/${assignment._id}`);
           const data = res.data;
-          
+
           setSubmissionStatus(prev => ({
             ...prev,
-            [assignment._id]: data.submitted
+            [assignment._id]: data
           }));
         } catch (err) {
           console.error('Error fetching submission status:', err);
@@ -35,11 +33,11 @@ const StudentDashboard = () => {
     }
   }, [assignments, studentId]);
 
-
   useEffect(() => {
     if (localStorage.getItem('role') !== 'student') {
       window.location.href = '/login';
     }
+
     const fetchData = async () => {
       try {
         const res = await axios.get(`https://codeclassroom-backend.onrender.com/classrooms/by-student/${studentId}`);
@@ -127,14 +125,28 @@ const StudentDashboard = () => {
                 >
                   <h4>{assignment.title}</h4>
                   <p>{assignment.description}</p>
-                  {submissionStatus[assignment._id] && (
-                    <span className="done-checkmark">✔️ Submitted</span>
+
+                  {submissionStatus[assignment._id]?.submitted && (
+                    <>
+                      <span className="done-checkmark">✔️ Submitted</span>
+
+                      {submissionStatus[assignment._id]?.grade?.status === 'correct' && (
+                        <div className="grade-status correct">✅ Correct</div>
+                      )}
+
+                      {submissionStatus[assignment._id]?.grade?.status === 'incorrect' && (
+                        <div className="grade-status incorrect">❌ Try Again Please</div>
+                      )}
+
+                      {submissionStatus[assignment._id]?.grade?.feedback && (
+                        <p className="feedback-box"><b>Feedback:</b> {submissionStatus[assignment._id].grade.feedback}</p>
+                      )}
+                    </>
                   )}
                 </div>
               ))}
             </div>
           </main>
-
         )}
       </div>
     </div>

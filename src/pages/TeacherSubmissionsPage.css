@@ -1,62 +1,101 @@
 .submissions-container {
-    min-height: 100vh;
-    background: #f5f7fa;
-    padding-bottom: 60px;
-  }
-  
-  .dashboard-header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background: linear-gradient(to right, #c9def2, #063063);
-    color: white;
-  }
-  
-  .dashboard-logo {
-    width: 40px;
-    margin-right: 12px;
-    cursor: pointer;
-  }
-  
-  .dashboard-title {
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #50b4ff;
-  }
-  
-  .submissions-content {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px;
-  }
-  
-  .submissions-title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .submission-card {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  .submission-code {
-    background: #1e1e1e;
-    color: #eaeaea;
-    padding: 12px;
-    border-radius: 6px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    margin: 10px 0;
-  }
-  
-  .empty-text {
-    font-size: 16px;
-    color: #666;
-  }
-  
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding-bottom: 60px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #c9def2, #063063);
+  color: white;
+}
+
+.dashboard-logo {
+  width: 40px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #50b4ff;
+}
+
+.submissions-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.submissions-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.submission-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submission-code {
+  background: #1e1e1e;
+  color: #eaeaea;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 10px 0;
+}
+
+.empty-text {
+  font-size: 16px;
+  color: #666;
+}
+
+.grading-controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.grading-controls label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.feedback-box {
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.submit-grade-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-grade-button:hover {
+  background-color: #2563eb;
+}

@@ -139,3 +139,37 @@ body {
     border-radius: 0.5rem;
     margin-left: 0.5rem;
 }
+
+.grade-status {
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.grade-status.correct {
+    background-color: #d1fae5;
+    /* light green */
+    color: #065f46;
+    /* dark green */
+}
+
+.grade-status.incorrect {
+    background-color: #fee2e2;
+    /* light red */
+    color: #991b1b;
+    /* dark red */
+}
+
+.feedback-box {
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    color: #4b5563;
+    /* gray-700 */
+    background-color: #f9fafb;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
