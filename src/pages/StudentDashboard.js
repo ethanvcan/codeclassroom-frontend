@@ -16,15 +16,21 @@ const StudentDashboard = () => {
   const [joinCode, setJoinCode] = useState('');
   const [submissionStatus, setSubmissionStatus] = useState({});
 
+
   useEffect(() => {
     if (assignments.length > 0 && studentId) {
       assignments.forEach(async (assignment) => {
-        const res = await fetch(`/submissions/status/${studentId}/${assignment._id}`);
-        const data = await res.json();
-        setSubmissionStatus(prev => ({
-          ...prev,
-          [assignment._id]: data.submitted
-        }));
+        try {
+          const res = await axios.get(`https://codeclassroom-backend.onrender.com/submissions/status/${studentId}/${assignment._id}`);
+          const data = res.data;
+          
+          setSubmissionStatus(prev => ({
+            ...prev,
+            [assignment._id]: data.submitted
+          }));
+        } catch (err) {
+          console.error('Error fetching submission status:', err);
+        }
       });
     }
   }, [assignments, studentId]);
@@ -73,7 +79,7 @@ const StudentDashboard = () => {
         classroomId: joinCode,
         studentId
       });
-      toast.success('❌ Joined class! Redirecting...');
+      toast.success('✅ Joined class! Redirecting...');
       window.location.reload();
     } catch (err) {
       console.error(err);
