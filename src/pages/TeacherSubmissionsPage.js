@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './TeacherSubmissionsPage.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TeacherSubmissionsPage = () => {
   const { id } = useParams(); // assignmentId
@@ -33,10 +35,10 @@ const TeacherSubmissionsPage = () => {
   const handleSubmitGrade = async (submissionId, grade, index) => {
     try {
       await axios.patch(`https://codeclassroom-backend.onrender.com/submissions/${submissionId}/grade`, grade);
-      alert('Grade saved!');
+      toast.success('Grade saved!');
     } catch (err) {
       console.error('Error saving grade:', err);
-      alert('Failed to save grade.');
+      toast.success('Failed to save grade.');
     }
   };
 
@@ -46,6 +48,7 @@ const TeacherSubmissionsPage = () => {
 
   return (
     <div className="submissions-container">
+      <ToastContainer />
       <div className="dashboard-header">
         <img src="/logo.png" alt="Logo" className="dashboard-logo" />
         <h1 className="dashboard-title">CodingCampus</h1>
