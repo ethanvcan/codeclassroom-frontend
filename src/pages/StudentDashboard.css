@@ -126,14 +126,16 @@ body {
 .logout-button:hover {
     background-color: #d9363e;
 }
+
 .done-checkmark {
     display: inline-block;
-    background-color: #d1fae5; /* light green */
-    color: #065f46; /* dark green text */
+    background-color: #d1fae5;
+    /* light green */
+    color: #065f46;
+    /* dark green text */
     font-weight: 600;
     font-size: 0.875rem;
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
     margin-left: 0.5rem;
-  }
-  
+}
