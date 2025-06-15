@@ -128,7 +128,7 @@ const StudentDashboard = () => {
                   <h4>{assignment.title}</h4>
                   <p>{assignment.description}</p>
                   {submissionStatus[assignment._id] && (
-                    <span className="done-checkmark">✔️ Done</span>
+                    <span className="done-checkmark">✔️ Submitted</span>
                   )}
                 </div>
               ))}
