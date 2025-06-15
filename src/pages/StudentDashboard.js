@@ -14,6 +14,21 @@ const StudentDashboard = () => {
   const [classrooms, setClassrooms] = useState([]);
   const [assignments, setAssignments] = useState([]);
   const [joinCode, setJoinCode] = useState('');
+  const [submissionStatus, setSubmissionStatus] = useState({});
+
+  useEffect(() => {
+    if (assignments.length > 0 && userId) {
+      assignments.forEach(async (assignment) => {
+        const res = await fetch(`/submissions/status/${userId}/${assignment._id}`);
+        const data = await res.json();
+        setSubmissionStatus(prev => ({
+          ...prev,
+          [assignment._id]: data.submitted
+        }));
+      });
+    }
+  }, [assignments, userId]);
+
 
   useEffect(() => {
     if (localStorage.getItem('role') !== 'student') {
@@ -65,7 +80,7 @@ const StudentDashboard = () => {
       toast.error('❌ Invalid class code. Please try again.');
     }
   };
-  
+
   const handleLogout = () => {
     window.location.href = '/login';
   };
@@ -74,7 +89,7 @@ const StudentDashboard = () => {
     <div className="student-dashboard">
       <ToastContainer />
       <header className="dashboard-header">
-        <img src="/logo.png" alt="Logo" className="dashboard-logo"  style={{ cursor: 'default' }}/>
+        <img src="/logo.png" alt="Logo" className="dashboard-logo" style={{ cursor: 'default' }} />
         <h1 className="dashboard-title" style={{ cursor: 'default' }}>CodingCampus</h1>
         <button className="logout-button" onClick={handleLogout}>Logout</button>
       </header>
@@ -106,6 +121,9 @@ const StudentDashboard = () => {
                 >
                   <h4>{assignment.title}</h4>
                   <p>{assignment.description}</p>
+                  {submissionStatus[assignment._id] && (
+                    <span className="done-checkmark">✔️ Done</span>
+                  )}
                 </div>
               ))}
             </div>
