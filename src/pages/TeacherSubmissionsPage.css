@@ -99,3 +99,9 @@
 .submit-grade-button:hover {
   background-color: #2563eb;
 }
+.grade-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}

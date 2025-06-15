@@ -89,25 +89,26 @@ const TeacherSubmissionsPage = () => {
                   ❌ Try Again Please
                 </label>
               </div>
-
-              <textarea
+              <div className="grade-actions">
+                <textarea
                 placeholder="Leave feedback here..."
                 value={s.grade?.feedback || ''}
                 onChange={(e) => handleGradeChange(idx, 'feedback', e.target.value)}
                 className="feedback-box"
               />
 
-              <button
-                className="submit-grade-button"
-                onClick={() =>
-                  handleSubmitGrade(s._id, {
-                    status: s.grade?.status || 'none',
-                    feedback: s.grade?.feedback || ''
-                  }, idx)
-                }
-              >
-                Submit Grade
-              </button>
+                <button
+                  className="submit-grade-button"
+                  onClick={() =>
+                    handleSubmitGrade(s._id, {
+                      status: s.grade?.status || 'none',
+                      feedback: s.grade?.feedback || ''
+                    }, idx)
+                  }
+                >
+                  Submit Grade
+                </button></div>
+
             </div>
           ))
         )}
