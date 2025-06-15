@@ -137,7 +137,6 @@ body {
     font-size: 0.875rem;
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
-    margin-left: 0.5rem;
 }
 
 .grade-status {
@@ -147,6 +146,7 @@ body {
     border-radius: 6px;
     display: inline-block;
     margin-top: 0.5rem;
+    margin-left: 10px;
 }
 
 .grade-status.correct {
@@ -164,7 +164,6 @@ body {
 }
 
 .feedback-box {
-    margin-top: 0.25rem;
     font-size: 0.85rem;
     color: #4b5563;
     /* gray-700 */

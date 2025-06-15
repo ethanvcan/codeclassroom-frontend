@@ -75,7 +75,7 @@
 }
 
 .feedback-box {
-  width: 100%;
+  width: auto;
   min-height: 60px;
   resize: vertical;
   font-size: 0.9rem;
