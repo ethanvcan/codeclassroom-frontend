@@ -17,9 +17,9 @@ const StudentDashboard = () => {
   const [submissionStatus, setSubmissionStatus] = useState({});
 
   useEffect(() => {
-    if (assignments.length > 0 && userId) {
+    if (assignments.length > 0 && studentId) {
       assignments.forEach(async (assignment) => {
-        const res = await fetch(`/submissions/status/${userId}/${assignment._id}`);
+        const res = await fetch(`/submissions/status/${studentId}/${assignment._id}`);
         const data = await res.json();
         setSubmissionStatus(prev => ({
           ...prev,
@@ -27,7 +27,7 @@ const StudentDashboard = () => {
         }));
       });
     }
-  }, [assignments, userId]);
+  }, [assignments, studentId]);
 
 
   useEffect(() => {
